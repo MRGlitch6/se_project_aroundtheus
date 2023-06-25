@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+}
+
+.footer__tag {
+  padding-top: 85px;
+  padding-bottom: 60px;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.16;
+  color: #545454;
+}
