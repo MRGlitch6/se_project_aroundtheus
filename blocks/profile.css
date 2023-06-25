@@ -30,7 +30,7 @@
   grid-area: title;
 }
 
-.profle__description {
+.profile__description {
   margin: 0;
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -49,7 +49,7 @@
   margin-left: auto;
   width: 150px;
   height: 50px;
-  border-radius: 2px;
+  border-width: 2px;
   border-color: white;
 }
 
@@ -58,6 +58,38 @@
   width: 24px;
   height: 24px;
   grid-area: button;
-  border-radius: 2px;
+  border-width: 2px;
   border-color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .profile__title {
+    margin: 0;
+    padding-top: 26px;
+  }
+
+  .profile__description {
+    margin: 0;
+    padding-top: 14px;
+    padding-bottom: 36px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile__add-button {
+    margin: 0;
+    width: 282px;
+    display: flex;
+  }
 }

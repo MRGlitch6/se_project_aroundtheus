@@ -22,3 +22,6 @@ Good luck and have fun!
 
 **Github Pages**
 https://MRGlitch6.github.io/se_project_aroundtheus
+
+**Description**
+This webpage is designed to be responsive to different viewports. Later interaction with the webpage will be implemented. I used several technologies such as Figma, Github, HTML, and CSS, to create the project.
