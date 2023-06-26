@@ -9,6 +9,13 @@
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.16;
+  line-height: 22px;
   color: #545454;
+}
+
+@media screen and (max-width: 480px) {
+  .footer__tag {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }

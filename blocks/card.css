@@ -18,6 +18,9 @@
   padding: 25px 20px;
   align-items: center;
   justify-content: space-between;
+}
+
+.card__description-text {
   /* overflow text not working???*/
   max-width: 219px;
   overflow: hidden;

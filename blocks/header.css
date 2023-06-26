@@ -1,3 +1,10 @@
 .header {
   padding-top: 45px;
 }
+
+.header__border {
+  border-bottom: 1px solid #545454;
+  margin-left: -19px;
+  margin-right: -19px;
+  margin-top: 41px;
+}
