@@ -55,6 +55,7 @@
   height: 50px;
   border-width: 2px;
   border-color: white;
+  border-radius: 2px;
 }
 
 .profile__add-button:hover {
@@ -67,7 +68,7 @@
   width: 24px;
   height: 24px;
   grid-area: button;
-  border-width: 2px;
+  border-width: 1px;
   border-color: white;
   margin-left: 18px;
 }
