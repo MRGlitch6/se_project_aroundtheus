@@ -24,6 +24,9 @@
 }
 
 .card__description-text {
+  margin: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 900;
   /* overflow text*/
   max-width: 219px;
   overflow: hidden;
