@@ -55,7 +55,7 @@ const profileDesciptionInput = document.querySelector(
 );
 
 //Preview Image Content
-const previewImageModal = document.querySelector("#image-modal");
+const previewImageModal = document.querySelector("#preview__modal");
 const previewImage = document.querySelector(".preview__image-modal");
 const previewImageTitle = document.querySelector(".preview__title-modal");
 const previewImageModalClose = document.querySelector(
