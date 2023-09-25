@@ -78,20 +78,25 @@ function closeModal(modal) {
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
-  const likeBtn = cardElement.querySelector(".card__like-button");
+  const cardTitleEl = cardElement.querySelector(".card__description-text");
 
+  //like btn
+  const likeBtn = cardElement.querySelector(".card__like-button");
   likeBtn.addEventListener("click", () => {
     likeBtn.classList.toggle("card__like-button-active");
   });
 
   //trash btn
   //find delete button
-  const trashBtn = document.querySelector(".card__trash-button");
+  const trashBtn = cardElement.querySelector(".card__trash-button");
   //add event listener to the delete button.
   trashBtn.addEventListener("click", () => {
     cardElement.remove();
   });
 
+  cardImageEl.src = cardData.link;
+  cardImageEl.alt = cardData.name;
+  cardTitleEl.textContent = cardData.name;
   //image modal
   //add click listener to the cardImage element
   //openModal with previewImageModal
