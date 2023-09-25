@@ -96,12 +96,19 @@
     </div>
 
     <!-- Image Modal -->
-    <div class="modal" id="preview-image-modal">
-      <div class="modal__container">
-        <button class="modal__close" id="modal-close-button"></button>
+    <div class="modal" id="image-modal">
+      <div class="modal__container-preview">
+        <button
+          class="modal__close"
+          id="preview-modal-close-button"
+          type="button"
+        ></button>
+        <img src="#" alt="" class="preview__image-modal" />
+        <h2 class="preview__title-modal"></h2>
       </div>
     </div>
 
+    <!-- card-template -->
     <template id="card-template">
       <li class="card">
         <img class="card__image" src="" alt="" />
