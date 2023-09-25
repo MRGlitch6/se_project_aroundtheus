@@ -11,7 +11,6 @@
   width: 282px;
   height: 282px;
   position: relative;
-  z-index: 1;
 }
 
 .card__description {
@@ -54,13 +53,13 @@
 }
 
 .card__trash-button {
-  display: grid;
-  background: transparent url(../images/Trash.svg) center no-repeat;
-  width: 21px;
-  height: 18px;
+  background: transparent url(../images/Trash.svg);
+  width: 18px;
+  height: 19px;
+  top: 18px;
+  left: 249px;
   border: none;
-  position: relative;
-  z-index: 2;
+  position: absolute;
 }
 
 .card__trash-button:hover {
