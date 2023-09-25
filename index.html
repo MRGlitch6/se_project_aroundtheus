@@ -50,20 +50,20 @@
     <!-- Edit Modal -->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="modal-close-button"></button>
+        <button class="modal__close" id="edit-modal-close-button"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form">
           <input
             type="text"
             name="title"
             class="modal__title"
-            id="profile-title-input"
+            id="profile-edit-title-input"
           />
           <input
             type="text"
             name="description"
             class="modal__description"
-            id="profile-description-input"
+            id="profile-edit-description-input"
           />
           <button class="modal__button">Save</button>
         </form>
@@ -73,7 +73,7 @@
     <!-- Add Modal -->
     <div class="modal" id="profile-add-modal">
       <div class="modal__container">
-        <button class="modal__close" id="modal-close-button"></button>
+        <button class="modal__close" id="add-modal-close-button"></button>
         <p class="modal__heading">New Place</p>
         <form class="modal__form">
           <input
@@ -81,14 +81,14 @@
             name="title"
             class="modal__title"
             placeholder="Title"
-            id="profile-title-input"
+            id="profile-add-title-input"
           />
           <input
             type="text"
             name="description"
             class="modal__description"
             placeholder="Image URL"
-            id="profile-description-input"
+            id="profile-add-description-input"
           />
           <button class="modal__button">Save</button>
         </form>
@@ -103,7 +103,7 @@
           id="preview-modal-close-button"
           type="button"
         ></button>
-        <img class="preview__image-modal" src="" alt="" />
+        <img class="preview__image-modal" src="#" alt="" />
         <h2 class="preview__title-modal"></h2>
       </div>
     </div>

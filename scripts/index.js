@@ -37,19 +37,21 @@ const initialCards = [
 const profileEditBtn = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileModalCloseBtn = profileEditModal.querySelector(
-  "#modal-close-button"
+  "#edit-modal-close-button"
 );
 //Profile Add
 const addNewCardBtn = document.querySelector(".profile__add-button");
 const profileAddModal = document.querySelector("#profile-add-modal");
-const addModalCloseBtn = profileAddModal.querySelector("#modal-close-button");
+const addModalCloseBtn = profileAddModal.querySelector(
+  "#add-modal-close-button"
+);
 
 //Profile Content
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
-const profileTitleInput = document.querySelector("#profile-title-input");
+const profileTitleInput = document.querySelector("#profile-edit-title-input");
 const profileDesciptionInput = document.querySelector(
-  "#profile-description-input"
+  "#profile-edit-description-input"
 );
 
 //Preview Image Content
