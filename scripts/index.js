@@ -144,6 +144,7 @@ function handleProfileAddSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closeModal(profileAddModal);
+  addCardFormElement.reset();
 }
 
 /* -------------------------------------------------------------------------- */

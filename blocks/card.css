@@ -37,6 +37,16 @@
   white-space: nowrap;
 }
 
+.edit-modal-close-button {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.add-modal-close-button {
+  cursor: pointer;
+  opacity: 50%;
+}
+
 .modal-close-button {
   cursor: pointer;
   opacity: 50%;

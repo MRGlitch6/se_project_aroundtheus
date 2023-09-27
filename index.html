@@ -50,22 +50,28 @@
     <!-- Edit Modal -->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="edit-modal-close-button"></button>
-        <p class="modal__heading">Edit Profile</p>
+        <button
+          class="modal__close"
+          id="edit-modal-close-button"
+          type="button"
+        ></button>
+        <h2 class="modal__heading">Edit Profile</h2>
         <form class="modal__form">
           <input
             type="text"
             name="title"
             class="modal__title"
             id="profile-edit-title-input"
+            placeholder="Name"
           />
           <input
             type="text"
             name="description"
             class="modal__description"
             id="profile-edit-description-input"
+            placeholder="Description"
           />
-          <button class="modal__button">Save</button>
+          <button class="modal__button" type="button">Save</button>
         </form>
       </div>
     </div>
@@ -73,8 +79,12 @@
     <!-- Add Modal -->
     <div class="modal" id="profile-add-modal">
       <div class="modal__container">
-        <button class="modal__close" id="add-modal-close-button"></button>
-        <p class="modal__heading">New Place</p>
+        <button
+          class="modal__close"
+          id="add-modal-close-button"
+          type="button"
+        ></button>
+        <h2 class="modal__heading">New Place</h2>
         <form class="modal__form">
           <input
             type="text"
@@ -82,15 +92,17 @@
             class="modal__title"
             placeholder="Title"
             id="profile-add-title-input"
+            required
           />
           <input
-            type="text"
+            type="url"
             name="description"
             class="modal__description"
             placeholder="Image URL"
             id="profile-add-description-input"
+            required
           />
-          <button class="modal__button">Save</button>
+          <button class="modal__button" type="button">Save</button>
         </form>
       </div>
     </div>
@@ -119,6 +131,6 @@
         </div>
       </li>
     </template>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" defer></script>
   </body>
 </html>
