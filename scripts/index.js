@@ -69,8 +69,10 @@ const cardTemplate =
 
 //Add new card
 const addCardFormElement = profileAddModal.querySelector(".modal__form");
-const cardTitleInput = addCardFormElement.querySelector(".modal__title");
-const cardUrlInput = addCardFormElement.querySelector(".modal__description");
+const cardTitleInput = addCardFormElement.querySelector(".modal__input_title");
+const cardUrlInput = addCardFormElement.querySelector(
+  ".modal__input_description"
+);
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
