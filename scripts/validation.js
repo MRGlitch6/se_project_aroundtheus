@@ -33,7 +33,7 @@ function hasInvalidInput(inputList) {
 
 function toggleButtonState(inputEls, submitBtn, { inactiveButtonClass }) {
   let foundInvalid = false;
-  inputEls.forEach((input) => {
+  inputEls.forEach((inputEl) => {
     if (!inputEl.validity.valid) {
       foundInvalid = true;
     }
