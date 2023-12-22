@@ -28,9 +28,17 @@ function hasInvalidInput(inputList) {
 }
 
 //disable btn
-
+function buttonDisabled(inputEls, submitBtn, { inactiveButtonClass }) {
+  submitBtn.classList.add(inactiveButtonClass);
+  submitBtn.disabled = true;
+}
 //enable btn
+function buttonEnabled(inputEls, submitBtn, { inactiveButtonClass }) {
+  submitBtn.classList.remove(inactiveButtonClass);
+  submitBtn.disabled = false;
+}
 
+//toggle btn
 function toggleButtonState(inputEls, submitBtn, { inactiveButtonClass }) {
   let foundInvalid = false;
   inputEls.forEach((inputEl) => {
@@ -67,21 +75,7 @@ function enableValidation(options) {
     formEl.addEventListener("submit", (e) => {
       e.preventDefault();
     });
-
     setEventListeners(formEl, options);
-    //look for all inputs inside form
-
-    //loop through all inputs to see if all are valid
-
-    //if input is invalid is not valid
-    //get validation message
-    //add error class to input
-    //display error message
-    //disable button
-
-    //if input is valid
-    //enable button
-    //reset error messages
   });
 }
 
