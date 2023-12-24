@@ -34,7 +34,7 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 
 //Modals
-const Modals = document.querySelectorAll(".modal");
+const modals = document.querySelectorAll(".modal");
 
 //Profile Edit
 const profileEditBtn = document.querySelector("#profile-edit-button");
@@ -154,11 +154,6 @@ function handleProfileAddSubmit(e) {
   addCardFormElement.reset();
 }
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", escapeCloseModal);
-}
-
 function escapeCloseModal(e) {
   if (e.key === "Escape") {
     const popupOpened = document.querySelector(".modal_opened");
@@ -177,15 +172,6 @@ profileEditBtn.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 
-//Close Listeners
-profileModalCloseBtn.addEventListener("click", () =>
-  closeModal(profileEditModal)
-);
-addModalCloseBtn.addEventListener("click", () => closeModal(profileAddModal));
-previewImageModalClose.addEventListener("click", () => {
-  closeModal(previewImageModal);
-});
-
 //Submit Listeners
 profileEditModal.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleProfileAddSubmit);
@@ -197,7 +183,7 @@ addNewCardBtn.addEventListener("click", () => openModal(profileAddModal));
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 //Close modal by clicking off
-Modals.forEach((modal) => {
+modals.forEach((modal) => {
   modal.addEventListener("mousedown", (e) => {
     if (e.target.classList.contains("modal_opened")) {
       closeModal(modal);

@@ -178,13 +178,13 @@
   }
 }
 
-.popup__input_type_error {
+.modal__input_type_error {
   border: none;
   border-bottom: 1px solid red;
   margin: 0;
   min-height: 17px;
 }
 
-.popup__error_visible {
+.modal__error_visible {
   color: red;
 }
