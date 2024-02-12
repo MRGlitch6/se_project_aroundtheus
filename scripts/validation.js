@@ -52,7 +52,8 @@ function toggleButtonState(inputEls, submitBtn, { inactiveButtonClass }) {
     return;
   }
 
-  submitBtn.classList.remove(inactiveButtonClass);
+  // submitBtn.classList.remove(inactiveButtonClass);
+  // submitBtn.enableBtn = true;
   submitBtn.disabled = false;
 }
 
@@ -60,7 +61,10 @@ function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   const submitBtn = formEl.querySelector(".modal__button");
-  toggleButtonState;
+
+  toggleButtonState(inputEls, submitBtn, inactiveButtonClass);
+  // toggleButtonState();
+
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
