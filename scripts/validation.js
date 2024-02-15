@@ -34,6 +34,7 @@ function disableBtn(inputEls, submitBtn, { inactiveButtonClass }) {
 }
 //enable btn
 function enableBtn(inputEls, submitBtn, { inactiveButtonClass }) {
+  console.log(inactiveButtonClass);
   submitBtn.classList.remove(inactiveButtonClass);
   submitBtn.disabled = false;
 }
@@ -54,7 +55,8 @@ function toggleButtonState(inputEls, submitBtn, { inactiveButtonClass }) {
 
   // submitBtn.classList.remove(inactiveButtonClass);
   // submitBtn.enableBtn = true;
-  submitBtn.disabled = false;
+  // submitBtn.disabled = false;
+  enableBtn(inputEls, submitBtn, { inactiveButtonClass });
 }
 
 function setEventListeners(formEl, options) {
@@ -62,7 +64,7 @@ function setEventListeners(formEl, options) {
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   const submitBtn = formEl.querySelector(".modal__button");
 
-  toggleButtonState(inputEls, submitBtn, inactiveButtonClass);
+  toggleButtonState(inputEls, submitBtn, options);
   // toggleButtonState();
 
   inputEls.forEach((inputEl) => {
