@@ -169,7 +169,12 @@ function escapeCloseModal(e) {
     const popupOpened = document.querySelector(".modal_opened");
     closeModal(popupOpened);
   }
-}
+};
+
+const handleLikeIcon = (evt) => {
+  evt.target.classlist.toggle(card__like-button-active);
+
+};
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */

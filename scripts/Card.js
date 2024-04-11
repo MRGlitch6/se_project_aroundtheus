@@ -1,24 +1,24 @@
 export default class Card {
   constructor({ name, link }, cardSelector) {
     this._name = name;
-    this._link = name;
+    this._link = link;
     this._cardElement = document.querySelector(cardSelector);
     this._cardSelector = cardSelector;
   }
 
   _setEventListeners() {
     // ".card__like-button"
-    console.log(this._cardElement.querySelector(".card__like-button"));
+    // console.log(this._cardElement.querySelector(".card__like-button"));
     this._cardElement
       .querySelector(".card__like-button")
       .addEventListener("click", () => {
-        this.hadleLikeIcon();
+        this._handleLikeIcon();
       });
     // ".card__trash-button"
     this._cardElement
       .querySelector(".card_delete-button")
       .addEventListener("click", () => {
-        this.hadleDeleteCard();
+        this.handleDeleteCard();
       });
   }
 
