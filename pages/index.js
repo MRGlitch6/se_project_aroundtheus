@@ -2,7 +2,7 @@
 /*                                  Card List                                 */
 /* -------------------------------------------------------------------------- */
 
-import Card from "./Card.js";
+import Card from "../Components/Card.js";
 
 const initialCards = [
   {
