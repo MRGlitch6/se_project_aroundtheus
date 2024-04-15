@@ -125,13 +125,14 @@ function getCardElement(cardData) {
   cardImageEl.alt = cardData.name;
   cardTitleEl.textContent = cardData.name;
 
-  //Image modal
-  cardImageEl.addEventListener("click", function () {
-    previewImage.src = cardData.link;
-    previewImage.alt = cardData.name;
-    previewImageTitle.textContent = cardData.name;
-    openModal(previewImageModal);
-  });
+  // //Preview Image modal
+  // cardImageEl.addEventListener("click", function () {
+  //   previewImage.src = cardData.link;
+  //   previewImage.alt = cardData.name;
+  //   previewImageTitle.textContent = cardData.name;
+  //   openModal(previewImageModal);
+  // });
+  // }
 
   return cardElement;
 }
@@ -169,11 +170,10 @@ function escapeCloseModal(e) {
     const popupOpened = document.querySelector(".modal_opened");
     closeModal(popupOpened);
   }
-};
+}
 
 const handleLikeIcon = (evt) => {
-  evt.target.classlist.toggle(card__like-button-active);
-
+  evt.target.classlist.toggle(card__like - button - active);
 };
 
 /* -------------------------------------------------------------------------- */
