@@ -4,6 +4,8 @@
 
 import Card from "../Components/Card.js";
 
+import FormValidator from "../Components/FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -86,6 +88,23 @@ const cardTitleInput = addCardFormElement.querySelector(".modal__input_title");
 const cardUrlInput = addCardFormElement.querySelector(
   ".modal__input_description"
 );
+
+//set settings for FormValidation
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+//validate profile
+const profileFormValidator = new FormValidator(settings, modals);
+profileFormValidator.enableValidation();
+
+const addCardValidator = new FormValidator(settings, addCardFormElement);
+addCardValidator.enableValidation();
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
