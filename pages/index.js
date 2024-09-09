@@ -100,7 +100,10 @@ const settings = {
 };
 
 //validate profile
-const profileFormValidator = new FormValidator(settings, modals);
+const profileFormValidator = new FormValidator(
+  settings,
+  profileEditModal.querySelector(".modal__form")
+);
 profileFormValidator.enableValidation();
 
 const addCardValidator = new FormValidator(settings, addCardFormElement);
