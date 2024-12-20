@@ -1,7 +1,6 @@
 export default class FormValidator {
   constructor(settings, formEl) {
     this._formElement = formEl;
-
     this._inputSelector = settings.inputSelector;
     this._submitButtonSelector = settings.submitButtonSelector;
     this._inactiveButtonClass = settings.inactiveButtonClass;
@@ -10,25 +9,29 @@ export default class FormValidator {
   }
 
   _showInputError(inputEl) {
-    this._errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
-    inputEl.classList.add(inputErrorClass);
-    this._errorMessageEl.textContent = inputEl.validationMessage;
-    this._errorMessageEl.classList.add(errorClass);
+    const errorMessageEl = this._formElement.querySelector(
+      `#${inputEl.id}-error`
+    );
+    inputEl.classList.add(this._inputErrorClass);
+    errorMessageEl.textContent = inputEl.validationMessage;
+    errorMessageEl.classList.add(this._errorClass);
   }
 
   _hideInputError(inputEl) {
-    this._errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
-    inputEl.classList.remove(inputErrorClass);
+    const errorMessageEl = this._formElement.querySelector(
+      `#${inputEl.id}-error`
+    );
+    inputEl.classList.remove(this._inputErrorClass);
     errorMessageEl.textContent = " ";
-    errorMessageEl.classList.remove(errorClass);
+    errorMessageEl.classList.remove(this._errorClass);
   }
 
   _checkInputValidity(inputEl) {
     if (!inputEl.validity.valid) {
-      this._showInputError(inputEl, inputEl.validationMessage);
+      this._showInputError(inputEl);
+    } else {
+      this._hideInputError(inputEl);
     }
-
-    this._hideInputError(inputEl);
   }
 
   _hasInvalidInput() {
@@ -48,10 +51,11 @@ export default class FormValidator {
 
   //toggle btn
   _toggleButtonState() {
-    if (!this.hasInvalidInput) {
+    if (!this._hasInvalidInput()) {
       this._enableBtn();
+    } else {
+      this.disableBtn();
     }
-    this.disableBtn();
   }
 
   _setEventListeners() {
@@ -72,7 +76,7 @@ export default class FormValidator {
   enableValidation() {
     this._formElement.addEventListener("submit", (e) => {
       e.preventDefault();
-      this.disableButton();
+      this.disableBtn();
     });
     this._setEventListeners();
     this._toggleButtonState();
