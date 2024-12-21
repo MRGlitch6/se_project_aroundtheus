@@ -41,13 +41,13 @@ export default class Card {
   /* -------------------------------------------------------------------------- */
 
   _handleLikeIcon() {
-    this.cardElement
+    this._cardElement
       .querySelector(".card__like-button")
       .classlist.toggle("card__like-button-active");
   }
 
   _handleDeleteCard() {
-    this.cardElement.remove();
+    this._cardElement.remove();
   }
 
   /* -------------------------------------------------------------------------- */
@@ -61,14 +61,12 @@ export default class Card {
       .cloneNode(true);
 
     //link
-    this._cardElement
-      .querySelector(".card__image")
-      .setAttribute("src", this._link);
+    this._cardElement.querySelector(".card__image").src = this._link;
+    // .setAttribute("src", this._link);
 
     //name
-    this._cardElement
-      .querySelector(".card__image")
-      .setAttribute("alt", this._name);
+    this._cardElement.querySelector(".card__image").alt = this._name;
+    // .setAttribute("alt", this._name);
 
     //description
     this._cardElement.querySelector(".card__description-text").textContent =

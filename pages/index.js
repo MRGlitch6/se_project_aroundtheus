@@ -38,8 +38,9 @@ const newCardData = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
-const card = new Card(newCardData, "#card-template");
-card.getView();
+// old view
+// const card = new Card(newCardData, "#card-template");
+// card.getView();
 
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
@@ -163,10 +164,21 @@ function getCardElement(cardData) {
 /*                               Event Handlers                               */
 /* -------------------------------------------------------------------------- */
 
-//Render Cards
-function renderCard(cardData, cardListEl) {
-  const cardElement = getCardElement(cardData);
+function handleImageClick({ link, name }) {
+  previewImage.src = link;
+  previewImage.alt = name;
+  previewImageTitle.textContent = name;
+  openModal(previewImageModal);
+}
+
+function renderCard(cardElement) {
   cardListEl.prepend(cardElement);
+}
+
+//Render Cards
+function createCard(cardData) {
+  const cardElement = new Card(cardData, "#card-template", handleImageClick);
+  return cardElement.getView();
 }
 
 //Close profile modal
@@ -182,7 +194,7 @@ function handleProfileAddSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-  renderCard({ name, link }, cardListEl);
+  renderCard(createCard({ name, link }));
   closeModal(profileAddModal);
   addCardFormElement.reset();
 }
@@ -217,7 +229,7 @@ addCardFormElement.addEventListener("submit", handleProfileAddSubmit);
 addNewCardBtn.addEventListener("click", () => openModal(profileAddModal));
 
 //Render content for each card
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+initialCards.forEach((cardData) => renderCard(createCard(cardData)));
 
 //Close modal by clicking off
 modals.forEach((modal) => {
