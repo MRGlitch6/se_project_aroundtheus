@@ -38,10 +38,6 @@ const newCardData = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
-// old view
-// const card = new Card(newCardData, "#card-template");
-// card.getView();
-
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
@@ -122,42 +118,6 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", escapeCloseModal);
-}
-
-//Get Card
-function getCardElement(cardData) {
-  //Card Content
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__description-text");
-
-  //Like btn
-  const likeBtn = cardElement.querySelector(".card__like-button");
-  likeBtn.addEventListener("click", () => {
-    likeBtn.classList.toggle("card__like-button-active");
-  });
-
-  //Trash btn
-  const trashBtn = cardElement.querySelector(".card__trash-button");
-  trashBtn.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
-  //Get Card Content
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.name;
-  cardTitleEl.textContent = cardData.name;
-
-  // //Preview Image modal
-  // cardImageEl.addEventListener("click", function () {
-  //   previewImage.src = cardData.link;
-  //   previewImage.alt = cardData.name;
-  //   previewImageTitle.textContent = cardData.name;
-  //   openModal(previewImageModal);
-  // });
-  // }
-
-  return cardElement;
 }
 
 /* -------------------------------------------------------------------------- */
