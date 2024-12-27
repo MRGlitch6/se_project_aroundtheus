@@ -149,6 +149,21 @@
   line-height: normal;
 }
 
+.modal__input_type_error {
+  border: none;
+  border-bottom: 1px solid red;
+  margin: 0;
+  min-height: 17px;
+  /* overflow text */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modal__error_visible {
+  color: red;
+}
+
 @media screen and (max-width: 480px) {
   .modal {
     padding: 0 19px;
@@ -176,15 +191,4 @@
   .modal__button {
     margin: 45px 0 25px;
   }
-}
-
-.modal__input_type_error {
-  border: none;
-  border-bottom: 1px solid red;
-  margin: 0;
-  min-height: 17px;
-}
-
-.modal__error_visible {
-  color: red;
 }

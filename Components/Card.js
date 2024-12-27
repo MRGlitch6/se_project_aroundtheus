@@ -29,6 +29,18 @@ export default class Card {
     this._cardElement
       .querySelector(".card__image")
       .addEventListener("click", () => {
+        //check screen width
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 480) {
+          console.log("hey");
+          const previewImage = this._cardElement.querySelector(".card__image");
+          if (previewImage) {
+            console.log("Preview image found:", previewImage);
+            previewImage.style.width = "240px";
+            previewImage.style.height = "299px";
+          }
+        }
+
         this._handleImageClick({
           link: this._link,
           name: this._name,
