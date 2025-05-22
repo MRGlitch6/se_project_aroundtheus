@@ -16,12 +16,13 @@
 }
 
 .modal__container {
+  overflow: hidden;
   position: relative;
   padding: 0 36px;
   border-radius: 10px;
   background-color: white;
   width: 358px;
-  height: 330px;
+  min-height: 330px;
 }
 
 .modal_opened {
@@ -152,8 +153,6 @@
 .modal__input_type_error {
   border: none;
   border-bottom: 1px solid red;
-  margin: 0;
-  min-height: 17px;
   /* overflow text */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -162,6 +161,9 @@
 
 .modal__error_visible {
   color: red;
+  height: 0;
+  overflow: visible;
+  position: relative;
 }
 
 @media screen and (max-width: 480px) {
@@ -179,8 +181,13 @@
 
   .modal__container {
     padding: 0 22px;
-    width: 238px;
-    height: 322px;
+    width: 282px;
+    min-height: 322px;
+  }
+
+  .modal__preview-image {
+    width: 240px;
+    min-height: 299px;
   }
 
   .modal__heading {
@@ -191,4 +198,6 @@
   .modal__button {
     margin: 45px 0 25px;
   }
+
+
 }

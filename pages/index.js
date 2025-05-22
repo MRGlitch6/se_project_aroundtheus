@@ -33,11 +33,6 @@ const initialCards = [
   },
 ];
 
-const newCardData = {
-  name: "Yosemite Valley",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-};
-
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
@@ -51,6 +46,7 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileModalCloseBtn = profileEditModal.querySelector(
   "#edit-modal-close-button"
 );
+const profileForm = profileEditModal.querySelector(".modal__form")
 //Profile Add
 const addNewCardBtn = document.querySelector(".profile__add-button");
 const profileAddModal = document.querySelector("#profile-add-modal");
@@ -99,7 +95,7 @@ const settings = {
 //validate profile
 const profileFormValidator = new FormValidator(
   settings,
-  profileEditModal.querySelector(".modal__form")
+  profileForm
 );
 profileFormValidator.enableValidation();
 
@@ -113,11 +109,11 @@ addCardValidator.enableValidation();
 //Open/Close Modal(s)
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", escapeCloseModal);
+  document.addEventListener("keydown", closeModalEscape);
 }
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", escapeCloseModal);
+  document.removeEventListener("keydown", closeModalEscape);
 }
 /* -------------------------------------------------------------------------- */
 /*                               Event Handlers                               */
@@ -158,7 +154,7 @@ function handleProfileAddSubmit(e) {
   addCardFormElement.reset();
 }
 
-function escapeCloseModal(e) {
+function closeModalEscape(e) {
   if (e.key === "Escape") {
     const popupOpened = document.querySelector(".modal_opened");
     closeModal(popupOpened);
@@ -181,7 +177,7 @@ profileEditBtn.addEventListener("click", () => {
 });
 
 //Submit Listeners
-profileEditModal.addEventListener("submit", handleProfileEditSubmit);
+profileForm.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleProfileAddSubmit);
 
 //Add card Listener
